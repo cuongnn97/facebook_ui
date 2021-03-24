@@ -1,0 +1,378 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+
+  <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+
+    .ui.vertical.stripe .button+h3,
+    .ui.vertical.stripe p+h3 {
+      margin-top: 3em;
+    }
+
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+
+      .masthead.segment {
+        height: 350px;
+      }
+
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+    .ui.inverted.segment, .ui.primary.inverted.segment {
+      background: #00b5ad;
+    }
+    .masthead.segment {
+        min-height: 100px;
+        padding: 1em 0em;
+    }
+    .ui.form textarea, .ui.input textarea {
+      width: 635px;
+    }
+    .ui.positive.button, .ui.positive.buttons .button {
+        width: 200px;
+    }
+    .ui.status {
+    border-radius: 15px;
+    border: 1px solid #d1d3d0;
+    padding: 10px;
+    }
+  </style>
+
+  <script>
+    $(document)
+      .ready(function () {
+
+        // fix menu when passed
+        $('.masthead')
+          .visibility({
+            once: false,
+            onBottomPassed: function () {
+              $('.fixed.menu').transition('fade in');
+            },
+            onBottomPassedReverse: function () {
+              $('.fixed.menu').transition('fade out');
+            }
+          })
+          ;
+
+        // create sidebar and attach to menu open
+        $('.ui.sidebar')
+          .sidebar('attach events', '.toc.item')
+          ;
+
+        // SEARCH BAR
+        var content = [
+          { title: 'Andorra' },
+          { title: 'United Arab Emirates' },
+          { title: 'Afghanistan' },
+          { title: 'Antigua' },
+          { title: 'Anguilla' },
+          { title: 'Albania' },
+          { title: 'Armenia' },
+          { title: 'Netherlands Antilles' },
+          { title: 'Angola' },
+          { title: 'Argentina' },
+          { title: 'American Samoa' },
+          { title: 'Austria' },
+          { title: 'Australia' },
+          { title: 'Aruba' },
+          { title: 'Aland Islands' },
+          { title: 'Azerbaijan' },
+          { title: 'Bosnia' },
+          { title: 'Barbados' },
+          { title: 'Bangladesh' },
+          { title: 'Belgium' },
+          { title: 'Burkina Faso' },
+          { title: 'Bulgaria' },
+          { title: 'Bahrain' },
+          { title: 'Burundi' }
+        ];
+        $('.ui.search')
+          .search({
+            source: content
+        })
+        ;
+      })
+      ;
+  </script>
+</head>
+
+<body>
+
+  <!-- Page Contents -->
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment">
+
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a href="file:///home/cuong/projects/ruby-practice/sample_fomantic/homepage.html" class="active item">Home</a>
+          <a href="file:///home/cuong/projects/ruby-practice/sample_fomantic/friends.html" class="item">Friends</a>
+
+          <div class="right item">
+            <div class="ui search">
+              <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search...">
+                <i class="search icon"></i>
+              </div>
+              <div class="results"></div>
+            </div>
+            <a class="item">Cuong</a>
+            <a class="ui inverted button">Sign Out</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ui vertical stripe segment">
+
+      <div class="ui text container">
+
+        <div class="ui icon input new_status">
+          <img src="./images/avatar.jpg" style="width:65px;height:65px;">&nbsp
+          <textarea placeholder="Hi Cuong, what do you think?"></textarea>
+        </div>
+
+        <br><br>
+
+        <button class="positive ui button">Post</button><hr>
+
+        <div class="ui status">
+          <img src="./images/avatar.jpg" alt="Avatar" style="width:25px; border-radius: 50%">
+          <a href="file:///home/cuong/projects/ruby-practice/sample_fomantic/homepage.html"><span class="ui header" >Cuong</span></a><br><br>
+          <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing
+            by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your
+            attention.</p>
+          <div class="ui labeled button" tabindex="0" style="display:inline;">
+            <div class="ui button">
+              <i class="heart icon"></i> Like
+            </div>
+          </div>
+          <div class="ui labeled button" tabindex="0">
+            <div class="ui red button">
+              <i class="heart icon"></i> Like
+            </div>
+          </div>
+          Tung, Trang, Thu <br><br>
+
+          <div class="ui comments">
+            <h3 class="ui dividing header">Comments</h3>
+            <div class="comment">
+              <a class="avatar">
+                <img src="./images/avatar.jpg" style="height:30px;">
+              </a>
+              <div class="content">
+                <a class="author">Matt</a>
+                <div class="metadata">
+                  <span class="date">Today at 5:42PM</span>
+                </div>
+                <div class="text">
+                  How artistic!
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <a class="avatar">
+                <img src="./images/avatar.jpg" style="height:30px;">
+              </a>
+              <div class="content">
+                <a class="author">Cuong</a>
+                <div class="metadata">
+                  <span class="date">Today at 11:22PM</span>
+                </div>
+                <div class="text">
+                  Instead of focusing on content
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui input">
+            <input type="text" placeholder="Write Comment..." style="width:600px;"> &nbsp
+            <button class="ui button">Post</button>
+            <hr>
+          </div>
+        </div>
+
+        <br><br>
+
+        <div class="ui status">
+          <img src="./images/avatar.jpg" alt="Avatar" style="width:25px; border-radius: 50%">
+          <a href="file:///home/cuong/projects/ruby-practice/sample_fomantic/homepage.html"><span
+              class="ui header">Cuong</span></a><br><br>
+          <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing
+            by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your
+            attention.</p>
+          <div class="ui labeled button" tabindex="0" style="display:inline;">
+            <div class="ui button">
+              <i class="heart icon"></i> Like
+            </div>
+          </div>
+          <div class="ui labeled button" tabindex="0">
+            <div class="ui red button">
+              <i class="heart icon"></i> Like
+            </div>
+          </div>
+          Tung, Trang, Thu <br><br>
+
+          <div class="ui comments">
+            <h3 class="ui dividing header">Comments</h3>
+            <div class="comment">
+              <a class="avatar">
+                <img src="./images/avatar.jpg" style="height:30px;">
+              </a>
+              <div class="content">
+                <a class="author">Matt</a>
+                <div class="metadata">
+                  <span class="date">Today at 5:42PM</span>
+                </div>
+                <div class="text">
+                  How artistic!
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <a class="avatar">
+                <img src="./images/avatar.jpg" style="height:30px;">
+              </a>
+              <div class="content">
+                <a class="author">Cuong</a>
+                <div class="metadata">
+                  <span class="date">Today at 11:22PM</span>
+                </div>
+                <div class="text">
+                  Instead of focusing on content
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui input">
+            <input type="text" placeholder="Write Comment..." style="width:600px;"> &nbsp
+            <button class="ui button">Post</button>
+            <hr>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+
+</body>
+
+  <div class="ui divided demo items">
+    <div class="item">
+      <div class="image">
+        <img src="./images/avatar.jpg" data-src="./images/avatar.jpg">
+      </div>
+      <div class="content">
+        <h2 class="ui header">Elliot Fu</h2>
+        <p></p>
+        <div class="ui primary button">Add Friend</div>
+        <div class="ui right floated button">View <i class="right chevron icon"></i></div>
+      </div>
+    </div>
+  </div>
