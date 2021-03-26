@@ -13,7 +13,6 @@
 
   <style type="text/css">
     body {
-      /* pointer-events: none; opacity: 0.4; */
       background-color: #f0f2f5;
       font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
     }
@@ -193,8 +192,7 @@
   <script type="text/javascript">
 
     $(document).ready(function () {
-      $(".container").css({ "pointer-events": "none" });
-      $(".container").css({ "opacity": "0.4" });
+      document.getElementById("myForm").style.display = "none";
       $(".toggle-password").hide();
     });
     $(function () {
