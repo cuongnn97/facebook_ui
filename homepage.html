@@ -16,12 +16,15 @@
       background-color: #f0f2f5;
       font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
     }
+
+    /* MENU */
     .fixed_menu {
       overflow: hidden;
       background-color: white;
       position: fixed;
       width: 100%;
       height:56px;
+      top: 0;
     }
 
     .menu_left img {
@@ -83,8 +86,10 @@
       border-radius: 50%;
       border: 0px;
     }
+
+    /* POPUP */
     .form-popup {
-      /* display: none; */
+      display: none;
       position: fixed;
       top: 56;
       right: 25px;
@@ -93,7 +98,6 @@
       z-index: 9;
     }
 
-    /* Add styles to the form container */
     .form-container {
       max-width: 345px;
       padding: 10px;
@@ -180,40 +184,99 @@
       width: 10%;
       padding: 5px;
     }
+
+    /* NEWFEED */
+
+    .newfeed_content {
+      padding-top: 70px;
+    }
+    .content_left {
+      padding-left: 10px;
+      float: left;
+      width: 20%;
+    }
+    .content_center {
+      text-align: center;
+      align-items: center;
+      float: left;
+      width: 60%;
+    }
+    .content_right {
+      float: left;
+      width: 20%;
+      background-color: green;
+    }
+    .left_item {
+      width: 100%;
+      height: 44px;
+    }
+    .center_item {
+      width: 60%;
+      background-color: aqua;
+      margin-left: 20%;
+    }
+    .story_content {
+      border-radius: 10px;
+      float: left;
+      width: 16%;
+      height: 198px;
+      /* background-image: url("./images/example_story.jpg"); */
+      background-color: black;
+      margin-right: 4px;
+      position: relative;
+      text-align: center;
+    }
+    .bottom-left {
+      position: absolute;
+      bottom: 8px;
+      color: white;
+      left: 8px;
+    }
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+    .new_post {
+      height: 123px;
+      background-color: aqua;
+    }
   </style>
 
   <script>
     function openPlusForm() {
+      closeAllForm();
       document.getElementById("plusForm").style.display = "block";
     }
 
-    function closePlusForm() {
-      document.getElementById("plusForm").style.display = "none";
-    }
-
     function openMessForm() {
+      closeAllForm();
       document.getElementById("messForm").style.display = "block";
     }
 
-    function closeMessForm() {
-      document.getElementById("messForm").style.display = "none";
-    }
-
     function openNotiForm() {
+      closeAllForm();
       document.getElementById("notiForm").style.display = "block";
     }
 
-    function closeNotiForm() {
-      document.getElementById("notiForm").style.display = "none";
-    }
-
     function openMoreForm() {
+      closeAllForm();
       document.getElementById("moreForm").style.display = "block";
     }
 
-    function closeMoreForm() {
+    function closeAllForm() {
+      document.getElementById("plusForm").style.display = "none";
+      document.getElementById("messForm").style.display = "none";
+      document.getElementById("notiForm").style.display = "none";
       document.getElementById("moreForm").style.display = "none";
     }
+
+    $(document).mouseup(function (e) {
+        var container = $(".form-popup");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+          container.hide();
+        }
+      });
   </script>
 </head>
 
@@ -261,7 +324,221 @@
     </div>
   </div>
 
-  <!-- <div class="form-popup" id="plusForm">
+  <div class="newfeed_content">
+    <div class="content_left">
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 50%;" src="./images/avatar.jpg" width="80%" alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Cuong Nguyen Nhat</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 50%;" src="https://www.facebook.com/rsrc.php/v3/y8/r/S0U5ECzYUSu.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Bạn bè</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 50%;" src="https://www.facebook.com/rsrc.php/v3/yt/r/PObY9OA5lvJ.png" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Trò chơi</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 50%;" src="https://www.facebook.com/rsrc.php/v3/y5/r/PrjLkDYpYbH.png" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Nhóm</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 50%;" src="https://www.facebook.com/rsrc.php/v3/yU/r/D2y-jJ2C_hO.png" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Marketplace</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 50%;" src="./images/icon_arrow.png" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Xem thêm</span>
+        </div>
+      </div>
+
+      <hr style="margin-left: 6px;margin-bottom: 15px;margin-top: 15px;margin-right: 20px;">
+      <span style="color: #65676b;font-size: 17px;margin-left: 6px;"><b>Lối tắt của bạn</b></span>
+
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 5px;" src="https://scontent.fhan3-3.fna.fbcdn.net/v/t39.2081-6/c6.6.31.31a/p36x36/72186750_1377171662436470_268893303808720896_n.png?_nc_cat=1&ccb=1-3&_nc_sid=eaa83b&_nc_ohc=EgkLjBSq9l4AX9ZhCqL&_nc_ht=scontent.fhan3-3.fna&_nc_tp=30&oh=6c225c815862d2d12f623f19b2bd82d8&oe=6088E428" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Bắn cá ăn xu</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 5px;" src="https://scontent.fhan3-3.fna.fbcdn.net/v/t39.2081-6/c6.6.31.31a/p36x36/51609293_615720298867953_886030755069689856_n.png?_nc_cat=1&ccb=1-3&_nc_sid=eaa83b&_nc_ohc=rDQi_88B_6gAX-cBdxP&_nc_ht=scontent.fhan3-3.fna&_nc_tp=30&oh=3a9eeadeaa2ec9718ad964c250e6d29c&oe=60858C69" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Tiến lên miền nam</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 5px;" src="https://scontent.fhan3-3.fna.fbcdn.net/v/t39.2081-6/c6.6.31.31a/p36x36/55980279_2642186042519987_3356159987092029440_n.png?_nc_cat=1&ccb=1-3&_nc_sid=eaa83b&_nc_ohc=wE9DCGpsCcoAX_dXLJg&_nc_ht=scontent.fhan3-3.fna&_nc_tp=30&oh=298d5acef2e5fb6cd58d94b980aa67ae&oe=60868C82" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Phỏm - Tá lả</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 5px;" src="https://scontent.fhan3-3.fna.fbcdn.net/v/t39.2081-6/c6.6.31.31a/p36x36/19284820_1368347046564416_6513969240469405696_n.png?_nc_cat=1&ccb=1-3&_nc_sid=eaa83b&_nc_ohc=OuZFDlge8M4AX9utMrD&_nc_ht=scontent.fhan3-3.fna&_nc_tp=30&oh=6f55ac9645838bb0d7b168fb83b0b6c3&oe=60873F01" width="80%"
+            alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Pokerist Texas Holdem Poker</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 5px;"
+            src="https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-0/cp0/c6.0.50.50a/p50x50/142368821_1921163731368264_7191663041765257350_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=ca434c&_nc_ohc=2EiKcyHZQPoAX8rl4sV&_nc_ht=scontent.fhan4-1.fna&tp=27&oh=8c18092fee75a212de0031a592ac3c10&oe=6086314B"
+            width="80%" alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Chelchesnal Madrid FC</span>
+        </div>
+        <div class="small_icon_setting">
+        </div>
+      </div>
+
+      <div class="left_item">
+        <div class="icon_setting">
+          <img style="border-radius: 5px;" src="./images/icon_arrow.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_setting">
+          <span style="color: #050505;font-size: 15px;">Xem thêm</span>
+        </div>
+      </div>
+
+      <div class="more_option" style="margin-left:6px;margin-right: 6px;">
+        <a style="color: #65676B; font-size: 13px;" href="#">Quyền riêng tư</a> -
+        <a style="color: #65676B; font-size: 13px;" href="#">Điều khoản</a> -
+        <a style="color: #65676B; font-size: 13px;" href="#">Quảng cáo</a> -
+        <a style="color: #65676B; font-size: 13px;" href="#">Lựa chọn quảng cáo</a> -
+        <a style="color: #65676B; font-size: 13px;" href="#">Cookie</a> -
+        <a style="color: #65676B; font-size: 13px;" href="#">Xem thêm</a> -
+        <a style="color: #65676B; font-size: 13px;" href="#">Facebook © 2021</a>
+      </div>
+    </div>
+
+
+
+    <div class="content_center">
+      <div class="center_item">
+        <div class="story_content">
+          <div class="bottom-left"><b>Nhật Cường</b></div>
+          <div class="top-left">
+            <img style="border-radius: 50%;width: 30px;height: 30px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+        </div>
+        <div class="story_content">
+          <div class="bottom-left"><b>Hà Thu</b></div>
+          <div class="top-left">
+            <img style="border-radius: 50%;width: 30px;height: 30px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+        </div>
+        <div class="story_content">
+          <div class="bottom-left"><b>Nhật Cường</b></div>
+          <div class="top-left">
+            <img style="border-radius: 50%;width: 30px;height: 30px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+        </div>
+        <div class="story_content">
+          <div class="bottom-left"><b>Hà Thu</b></div>
+          <div class="top-left">
+            <img style="border-radius: 50%;width: 30px;height: 30px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+        </div>
+        <div class="story_content">
+          <div class="bottom-left"><b>Nhật Cường</b></div>
+          <div class="top-left">
+            <img style="border-radius: 50%;width: 30px;height: 30px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+        </div>
+        <div class="story_content">
+          <div class="bottom-left"><b>Hà Thu</b></div>
+          <div class="top-left">
+            <img style="border-radius: 50%;width: 30px;height: 30px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+        </div>
+
+        <div class="new_post">
+          <img src="./images/facebook_logo.png" style="width: 40px;height:40px;">
+          <div class="ui search">
+            <div class="ui icon input">
+              <input class="prompt" type="text" placeholder="Tìm kiếm trên Facebook"
+                style="background-color: #f0f2f5;width: 240px;height:40px;">
+              <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="content_right">c</div>
+  </div>
+
+  <div class="form-popup" id="plusForm">
     <form action="/action_page.php" class="form-container">
       <h1>Tạo</h1>
 
@@ -358,9 +635,9 @@
       </div>
 
     </form>
-  </div> -->
+  </div>
 
-  <!-- <div class="form-popup" id="messForm">
+  <div class="form-popup" id="messForm">
     <form action="/action_page.php" class="form-container">
       <div style="width: 55%;float: left;margin-top: 5px;">
         <h2>Messenger</h2>
@@ -464,9 +741,9 @@
       </div>
     </form>
 
-  </div> -->
+  </div>
 
-  <!-- <div class="form-popup" id="notiForm">
+  <div class="form-popup" id="notiForm">
     <form action="/action_page.php" class="form-container">
       <div style="width: 50%;float: left;margin-top: 5px;">
         <h2>Thông báo</h2>
@@ -568,7 +845,7 @@
         </div>
       </div>
     </form>
-  </div> -->
+  </div>
 
   <div class="form-popup" id="moreForm">
     <form action="/action_page.php" class="form-container">
