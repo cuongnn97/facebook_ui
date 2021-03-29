@@ -83,10 +83,112 @@
       border-radius: 50%;
       border: 0px;
     }
+    .form-popup {
+      /* display: none; */
+      position: fixed;
+      top: 56;
+      right: 25px;
+      height: 200px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 345px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .icon_plus {
+      width: 10%;
+      height: 36px;
+      text-align: center;
+      margin-left: 5px;
+      background-color: #e4e6eb;
+      border-radius: 50%;
+      float: left;
+      margin-top: 5px;
+    }
+    .icon_plus img{
+      margin-top: 3px;
+    }
+    .content_plus {
+      float: left;
+      width: 80%;
+      margin-left: 10px;
+    }
+    .column_icon {
+      float: left;
+      width: 25%;
+      padding: 5px;
+    }
+    .avatar_mess {
+      float: left;
+      width: 18%;
+    }
+    .content_mess {
+      float: left;
+      width: 70%;
+      margin-top: 5px;
+    }
+    .small_avatar {
+      float: left;
+      width: 10%;
+      margin-top: 15px;
+    }
+    .content_messenger {
+      height: 72px;
+      margin-top: 10px;
+    }
+    .fixed_messenger {
+      width: 100%;
+      height: 35px;
+      border-top: 1px solid;
+      text-align: center;
+    }
+    .content_noti {
+      float: left;
+      width: 80%;
+    }
+    .button_request {
+      text-align: center;
+    }
   </style>
 
   <script>
+    function openPlusForm() {
+      document.getElementById("plusForm").style.display = "block";
+    }
 
+    function closePlusForm() {
+      document.getElementById("plusForm").style.display = "none";
+    }
+
+    function openMessForm() {
+      document.getElementById("messForm").style.display = "block";
+    }
+
+    function closeMessForm() {
+      document.getElementById("messForm").style.display = "none";
+    }
+
+    function openNotiForm() {
+      document.getElementById("notiForm").style.display = "block";
+    }
+
+    function closeNotiForm() {
+      document.getElementById("notiForm").style.display = "none";
+    }
+
+    function openMoreForm() {
+      document.getElementById("moreForm").style.display = "block";
+    }
+
+    function closeMoreForm() {
+      document.getElementById("moreForm").style.display = "none";
+    }
   </script>
 </head>
 
@@ -118,51 +220,345 @@
         <img src="./images/avatar.jpg" style="width: 30px;height:30px;border-radius: 50%;"> <span class="acc_name" style="margin-bottom: 7px;">Cuong</span>
       </div>&nbsp&nbsp
       <div class="right_button">
-        <button class="icon_right" type="submit" >
+        <button class="icon_right" onclick="openPlusForm()" type="submit" >
           <img src="./images/icon_plus.svg" width="70%" alt="submit" />
         </button>&nbsp
-        <button class="icon_right" type="submit">
+        <button class="icon_right" onclick="openMessForm()" type="submit">
           <img src="./images/icon_mess.png" width="70%" alt="submit" />
         </button>&nbsp
-        <button class="icon_right" type="submit">
+        <button class="icon_right" onclick="openNotiForm()" type="submit">
           <img src="./images/icon_bell.png" width="70%" alt="submit" />
         </button>&nbsp
-        <button class="icon_right" type="submit">
+        <button class="icon_right" onclick="openMoreForm()" type="submit">
           <img src="./images/icon_arrow.png" width="70%" alt="submit" />
         </button>
       </div>
     </div>
-345 651
   </div>
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <img onclick="closeForm()" src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
-      style="top: 12px;z-index: 2;position: absolute;;right: 10px;height:24px;">
-    <div class="_52lp">
-      <div class="_52lq">Đăng ký</div>
-      <div class="_52lr">Nhanh chóng và dễ dàng.</div>
-      <div class="_8fgl">
-        <div class="ui input">
-          <input type="text" placeholder="Số di động hoặc email" style="border-radius: 8px;">
+
+  <!-- <div class="form-popup" id="plusForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Tạo</h1>
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_post.png" width="80%" alt="submit" />
         </div>
-        <br>
-        <br>
-        <div class="ui input">
-          <input id="password-field" type="password" name="password" placeholder="Mật khẩu mới"
-            style="border-radius: 8px;">
-        </div>
-        <br><br>
-        <p class="_58mv">Bằng cách nhấp vào Đăng ký, bạn đồng ý với <a href="#" id="terms-link" target="_blank"
-            rel="nofollow">Điều khoản</a>, <a href="#" id="privacy-link" target="_blank" rel="nofollow">Chính sách dữ
-            liệu</a> và <a href="#" id="cookie-use-link" target="_blank" rel="nofollow">Chính sách cookie</a> của chúng
-          tôi. Bạn có thể nhận được thông báo của chúng tôi qua SMS và hủy nhận
-          bất kỳ lúc nào.</p>
-        <div class="register_button" style="text-align: center;">
-          <button class="positive ui button">Đăng ký</button>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Đăng</span>
+          <p style="color: #65676b;font-size: 13px;">Chia sẻ bài viết trên bảng tin</p>
         </div>
       </div>
-    </div>
 
-  </form>
-</div>
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_book.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Tin</span>
+          <p style="color: #65676b;font-size: 13px;">Bạn có thể chia sẻ ảnh hoặc viết gì đó</p>
+        </div>
+      </div>
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_camera.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Phòng họp mặt</span>
+          <p style="color: #65676b;font-size: 13px;">chat video với bất kì ai trên hoặc bên ngoài Facebook, không giới hạn thời gian.</p>
+        </div>
+      </div>
+
+      <hr style="margin-left: 16px;margin-bottom: 15px;margin-top: 15px;">
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_flag.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Trang</span>
+          <p style="color: #65676b;font-size: 13px;">Kết nối và chia sẻ với khách hàng hoặc fan</p>
+        </div>
+      </div>
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_loa.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Quảng cáo</span>
+          <p style="color: #65676b;font-size: 13px;">Quảng cáo doanh nghiệp, thương hiệu hoặc tổ chức của bạn.</p>
+        </div>
+      </div>
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_group.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Nhóm</span>
+          <p style="color: #65676b;font-size: 13px;">Kết nối với những người cùng chung sở thích.</p>
+        </div>
+      </div>
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_event.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Sự kiện</span>
+          <p style="color: #65676b;font-size: 13px;">Gắn kết mọi người thông qua sự kiện riêng tư hoặc công khai.</p>
+        </div>
+      </div>
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_market.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Bài niêm yết trên Marketplace</span>
+          <p style="color: #65676b;font-size: 13px;">Bán hàng cho người trong cộng đồng của bạn.</p>
+        </div>
+      </div>
+
+      <div style="width: 345px;height: 53px;">
+        <div class="icon_plus">
+          <img src="./images/icon_work.png" width="80%" alt="submit" />
+        </div>
+        <div class="content_plus">
+          <span style="color: #050505;font-size: 15px;">Việc làm</span>
+          <p style="color: #65676b;font-size: 13px;">Đăng tin tuyển dụng và tiếp cận miễn phí những ứng viên quanh đây.</p>
+        </div>
+      </div>
+
+    </form>
+  </div> -->
+
+  <!-- <div class="form-popup" id="messForm">
+    <form action="/action_page.php" class="form-container">
+      <div style="width: 55%;float: left;margin-top: 5px;">
+        <h2>Messenger</h2>
+      </div>
+      <div style="width: 45%;float: left;margin-top: 5px;">
+        <div class="column_icon">
+          <img src="./images/icon_more.jpg" width="80%" alt="submit" />
+        </div>
+        <div class="column_icon">
+          <img src="./images/icon_fit.png" width="80%" alt="submit" />
+        </div>
+        <div class="column_icon">
+          <img src="./images/icon_camera.png" width="80%" alt="submit" />
+        </div>
+        <div class="column_icon">
+          <img src="./images/icon_post.png" width="80%" alt="submit" />
+        </div>
+      </div>
+      <div class="ui icon input" style="margin-top: 10px;">
+        <input class="prompt" type="text" placeholder="Tìm kiếm trên Messenger"
+          style="background-color: #f0f2f5;width: 320px;height:36px;border-radius: 15px;">
+        <i class="search icon"></i>
+      </div>
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_mess">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Cuong</span>
+            <p style="color: #65676b;font-size: 13px;">Chia sẻ bài viết trên bảng tin</p>
+          </div>
+        </div>
+        <div class="small_avatar">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="50%" alt="submit" />
+        </div>
+      </div>
+
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_mess">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Tung</span>
+            <p style="color: #65676b;font-size: 13px;">Đăng tin tuyển dụng và tiếp cận miễn phí những</p>
+          </div>
+        </div>
+        <div class="small_avatar">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="50%" alt="submit" />
+        </div>
+      </div>
+
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_mess">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Thu</span>
+            <p style="color: #65676b;font-size: 13px;">Bán hàng cho người trong cộng đồng của bạn.</p>
+          </div>
+        </div>
+        <div class="small_avatar">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="50%" alt="submit" />
+        </div>
+      </div>
+
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_mess">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Trang</span>
+            <p style="color: #65676b;font-size: 13px;">Kết nối với những người cùng chung sở thích.</p>
+          </div>
+        </div>
+        <div class="small_avatar">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="50%" alt="submit" />
+        </div>
+      </div>
+
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_mess">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Nam</span>
+            <p style="color: #65676b;font-size: 13px;">Chia sẻ bài viết trên bảng tin</p>
+          </div>
+        </div>
+        <div class="small_avatar">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="50%" alt="submit" />
+        </div>
+      </div>
+      <div class="fixed_messenger">
+        <div style="margin-top: 10px;"><a style="color: #216FDB; font-size: 15px;font-weight: bold;" href="#">Xem tất cả trong Messenger</a></div>
+
+      </div>
+    </form>
+
+  </div> -->
+
+  <!-- <div class="form-popup" id="notiForm">
+    <form action="/action_page.php" class="form-container">
+      <div style="width: 50%;float: left;margin-top: 5px;">
+        <h2>Thông báo</h2>
+      </div>
+      <div style="width: 50%;float: left;margin-top: 5px;">
+        <div style="float: right;" class="column_icon">
+          <img src="./images/icon_more.jpg" width="80%" alt="submit" />
+        </div>
+      </div><br><br><br>
+      <p style="font-size: 17px; color: #050505;font-weight: bold;;"> Mới</p>
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_noti">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Nam chia sẻ bài viết trên bảng tin</span>
+            <p style="color: #65676b;font-size: 13px;">10 phút trước</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_noti">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Cuong đã bình luận về bài viết</span>
+            <p style="color: #65676b;font-size: 13px;">10 phút trước</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 17px; color: #050505;font-weight: bold;;"> Lời mời kết bạn</p>
+      <div class="friend_request">
+        <div class="content_messenger">
+          <div class="avatar_mess">
+            <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+          <div class="content_noti">
+            <div class="content_plus">
+              <span style="color: #050505;font-size: 15px;"><b>Cuong</b> đã gửi cho bạn lời mời kết bạn</span>
+              <p style="color: #65676b;font-size: 13px;">10 phút trước</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="button_request">
+          <button style="width:108px;height:36px;background-color: #1877F2;color:white;border:none;border-radius:5px;"  type="submit"><b>Xác nhận</b></button>
+          <button style="width:108px;height:36px;background-color: #E4E6EB;border:none;border-radius:5px;"
+            type="submit"><b>Xóa</b></button>
+        </div>
+      </div>
+
+      <div class="friend_request">
+        <div class="content_messenger">
+          <div class="avatar_mess">
+            <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+          </div>
+          <div class="content_noti">
+            <div class="content_plus">
+              <span style="color: #050505;font-size: 15px;"><b>Hà Thu</b> đã gửi cho bạn lời mời kết bạn</span>
+              <p style="color: #65676b;font-size: 13px;">10 phút trước</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="button_request">
+          <button style="width:108px;height:36px;background-color: #1877F2;color:white;border:none;border-radius:5px;"
+            type="submit"><b>Xác nhận</b></button>
+          <button style="width:108px;height:36px;background-color: #E4E6EB;border:none;border-radius:5px;"
+            type="submit"><b>Xóa</b></button>
+        </div>
+      </div><br><br>
+      <p style="font-size: 17px; color: #050505;font-weight: bold;;"> Trước đó</p>
+
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_noti">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Nam chia sẻ bài viết trên bảng tin</span>
+            <p style="color: #65676b;font-size: 13px;">10 phút trước</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content_messenger">
+        <div class="avatar_mess">
+          <img style="border-radius: 50%;margin-left: 5px;" src="./images/avatar.jpg" width="90%" alt="submit" />
+        </div>
+        <div class="content_noti">
+          <div class="content_plus">
+            <span style="color: #050505;font-size: 15px;">Nam chia sẻ bài viết trên bảng tin</span>
+            <p style="color: #65676b;font-size: 13px;">10 phút trước</p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div> -->
+
+  <div class="form-popup" id="moreForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>More</h1>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel" onclick="closeMoreForm()">Close</button>
+    </form>
+  </div>
+
+
 </body>
