@@ -39,7 +39,6 @@
     .ui.search {
       margin-top: -40px;
       margin-left: 65px;
-
     }
     .menu_left {
       float: left;
@@ -238,8 +237,87 @@
       left: 16px;
     }
     .new_post {
+      margin-top: 220px;
       height: 123px;
-      background-color: aqua;
+      background-color: white;
+      width: 50%;
+      margin-left: 25%;
+      border-radius: 10px;
+    }
+
+    .new_post img{
+      margin-right: 87%;
+      margin-top: 10px;
+      border-radius: 50%;
+    }
+
+    .more_post {
+      margin-left: 2.5%;
+      width: 95%;
+      height: 49px;
+      border-top: solid 1px #e4e6eb;
+      margin-top: 55px;
+    }
+    .live_video {
+      text-align: center;
+      height: 40px;
+      float: left;
+      width: 33%;
+    }
+    .picture_video {
+      float: left;
+      width: 33%;
+      height: 40px;
+    }
+    .emotion_activities {
+      float: left;
+      width: 33%;
+      height: 40px;
+    }
+
+    .content_post {
+      border-radius: 10px;
+      margin-top: 15px;
+      margin-left: 25%;
+      width: 50%;
+      height: 800px;
+      background-color: white;
+      position: relative;
+      text-align: center;
+    }
+    .ava-top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+    .post_user {
+      width: 100%;
+      height: 48px;
+    }
+    .icon_post {
+      width: 10%;
+      text-align: center;
+      margin-left: 5px;
+      border-radius: 50%;
+      float: left;
+      margin-top: 10px;
+    }
+    .user_post {
+      margin-top: 5px;
+      float: left;
+      width: 75%;
+      padding: 5px;
+      margin-left: 5px;
+      text-align: left;
+    }
+    .small_icon_post {
+      text-align: right;
+      float: left;
+      width: 10%;
+      padding: 5px;
+    }
+    .post_content {
+
     }
   </style>
 
@@ -521,19 +599,52 @@
           </div>
         </div>
 
-        <div class="new_post">
-          <img src="./images/facebook_logo.png" style="width: 40px;height:40px;">
-          <div class="ui search">
-            <div class="ui icon input">
-              <input class="prompt" type="text" placeholder="Tìm kiếm trên Facebook"
-                style="background-color: #f0f2f5;width: 240px;height:40px;">
-              <i class="search icon"></i>
-            </div>
-            <div class="results"></div>
+      </div>
+
+      <div class="new_post">
+        <img src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82" style="width: 40px;height:40px;">
+        <div class="ui search">
+          <div class="ui input" style="width: 97%;float: left;">
+            <input class="prompt" type="text" placeholder="Cuong ơi, bạn đang nghĩ gì thế "
+              style="background-color: #f0f2f5;width: 90%;height:40px;">
           </div>
         </div>
-
+        <div class="more_post">
+          <div class="live_video">
+            <img style="margin-left: 8px;" src="./images/red_camera.png" width="15%" alt="submit" />
+            <p style="color: #65676b;font-size: 15px;margin-top: -22px;margin-left: 15px;"><b>Video trực tiếp</b></p>
+          </div>
+          <div class="picture_video">
+            <img style="margin-left: 8px;" src="./images/icon_picture.png" width="15%" alt="submit" />
+            <p style="color: #65676b;font-size: 15px;margin-top: -22px;"><b>Ảnh/Video</b></p>
+          </div>
+          <div class="emotion_activities">
+            <img src="./images/icon_emotion.jpg" width="15%" alt="submit" />
+            <p style="color: #65676b;font-size: 15px;margin-top: -22px;margin-left: 20px;"><b>Cảm xúc/Hoạt động</b></p>
+          </div>
+        </div>
       </div>
+
+      <div class="content_post">
+        <div class="post_user">
+          <div class="icon_post">
+            <img
+              src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82"
+              style="width: 40px;height:40px; border-radius: 50%;">
+          </div>
+          <div class="user_post">
+            <p style="color: #050505;font-size: 15px"><b>Cuong Nguyen Nhat</b></p>
+            <p style="color: #65676b;font-size: 13px;margin-top: -15px;">23 phút trước</p>
+          </div>
+          <div class="small_icon_post">
+            <img style="border-radius: 50%;margin-left: 5px;background-color: white;margin-top: 10px;" src="./images/icon_more.jpg"
+              width="50%" alt="submit" />
+          </div>
+        </div>
+        <div class="post_content">
+        </div>
+      </div>
+
     </div>
     <div class="content_right">c</div>
   </div>
@@ -544,7 +655,7 @@
 
       <div style="width: 345px;height: 53px;">
         <div class="icon_plus">
-          <img src="./images/icon_post.png" width="80%" alt="submit" />
+          <img style="float: left;" src="./images/icon_post.png" width="80%" alt="submit" />
         </div>
         <div class="content_plus">
           <span style="color: #050505;font-size: 15px;">Đăng</span>
